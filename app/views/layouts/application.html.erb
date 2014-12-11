@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Androsec</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+  <!-- Data tables bootstrap theme css -->
+  <link rel="stylesheet" href="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.css">
+
+  <!-- Latest Jquery -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <!-- Data tables js -->
+  <script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+
+  <!-- Data tables bootstrap js -->
+  <script src="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+
+  <!-- Highcharts charting library -->
+  <script src="/javascripts/highcharts.src.js"></script>
+  <script src="/javascripts/exporting.src.js"></script>
+  <script src="/javascripts/no-data-to-display.src.js"></script>
+
+  <!-- Google Analytics -->
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-56752232-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+
+</head>
+<body>
+
+<!-- Navigation -->
+<header id="top" class="header">
+<nav id="main-nav" class="main-nav" role="navigation">
+  <div class="container">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="nav-item <%= 'active' if current_page?(home_path) %>">
+          <%= link_to "Home", home_path %>
+        </li>
+        <li class="nav-item <%= 'active' if current_page?(analytics_path) %>">
+          <%= link_to "Analytics", analytics_path %>
+        </li>
+        <li class="nav-item <%= 'active' if current_page?(top_apps_path) %>">
+          <%= link_to "Top Apps", top_apps_path %>
+        </li>
+        <li class="nav-item <%= 'active' if current_page?(categories_path) %>">
+          <%= link_to "Categories", categories_path %>
+        </li>
+        <!--<li class="nav-item <%= 'active' if current_page?(interesting_path) %>">
+          <%= link_to "Interesting Findings", interesting_path %>
+        </li>-->
+        <li class="nav-item <%= 'active' if current_page?(about_path) %>">
+          <%= link_to "About", about_path %>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+</header>
+<%= yield %>
+
+<!-- Footer -->
+<footer>
+  <div style="text-align: center">
+      <p>Copyright &copy; Jacob Peterson, Andres Ruiz, Andrew Filipski, Daniel Krutz</p>
+  </div>
+</footer>
+
+</body>
+</html>
