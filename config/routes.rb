@@ -21,6 +21,9 @@ Rails.application.routes.draw do
 
   get 'about' => 'about#index'
 
+  get 'queries' => 'queries#index'
+  post 'queries' => 'queries#create'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
